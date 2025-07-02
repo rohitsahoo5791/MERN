@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fade In/Out Boxes</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #box {
+      width: 300px;
+      height: 150px;
+      background-color: #28a745;
+      color: white;
+      line-height: 150px;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      display: none; /* Start hidden */
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="box">Hello! I fade in and out.</div>
+
+<button id="fadeInBtn">Fade In</button>
+<button id="fadeOutBtn">Fade Out</button>
+<button id="fadeToggleBtn">Fade Toggle</button>
+
+<script>
+  $(document).ready(function(){
+    $('#fadeInBtn').click(function(){
+      $('#box').fadeIn(600);
+    });
+
+    $('#fadeOutBtn').click(function(){
+      $('#box').fadeOut(600);
+    });
+
+    $('#fadeToggleBtn').click(function(){
+      $('#box').fadeToggle(600);
+    });
+  });
+</script>
+
+</body>
+</html>

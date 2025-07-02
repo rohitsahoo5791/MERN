@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manual Image Slider</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #slider {
+      width: 500px;
+      height: 300px;
+      position: relative;
+      margin: 20px auto;
+      overflow: hidden;
+      border: 2px solid #333;
+    }
+
+    #slider img {
+      width: 100%;
+      height: 100%;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #slider img.active {
+      display: block;
+      position: relative;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      margin: 10px 5px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .slider-controls {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div id="slider">
+  <img src="https://tse1.mm.bing.net/th/id/OIP.524mEA5PTl6v4-XzFKeM9gHaEo?rs=1&pid=ImgDetMain&o=7&rm=3" class="active" alt="Slide 1" />
+  <img src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?cs=srgb&dl=sea-landscape-sky-753626.jpg&fm=jpg" alt="Slide 2" />
+  <img src="https://images.pexels.com/photos/1284296/pexels-photo-1284296.jpeg?cs=srgb&dl=landscape-nature-water-1284296.jpg&fm=jpg" alt="Slide 3" />
+  <img src="https://wallpaperaccess.com/full/3019451.jpg" alt="Slide 4" />
+</div>
+
+<div class="slider-controls">
+  <button class="btn" id="prevBtn">Prev</button>
+  <button class="btn" id="nextBtn">Next</button>
+</div>
+
+<script>
+  $(document).ready(function() {
+    let currentIndex = 0;
+    const slides = $('#slider img');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.removeClass('active').fadeOut(300);
+      slides.eq(index).addClass('active').fadeIn(300);
+    }
+
+    $('#nextBtn').click(function() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showSlide(currentIndex);
+    });
+
+    $('#prevBtn').click(function() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      showSlide(currentIndex);
+    });
+  });
+</script>
+
+</body>
+</html>

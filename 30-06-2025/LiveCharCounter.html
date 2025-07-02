@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Character Counter</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+</head>
+<body>
+
+<textarea id="myText" rows="5" cols="40" placeholder="Type something..."></textarea>
+<div id="charCount">Characters: 0</div>
+
+<script>
+  $(document).ready(function(){
+    $('#myText').on('input', function(){
+      var charLength = $(this).val().length;
+      $('#charCount').text('Characters: ' + charLength);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scroll to Top Button</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #scrollTopBtn {
+      display: none; /* Hidden initially */
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      padding: 10px 15px;
+      font-size: 18px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: opacity 0.3s ease;
+    }
+    #scrollTopBtn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Just to have enough page height for scrolling */
+    body {
+      height: 2000px;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<button id="scrollTopBtn" title="Go to top">↑ Top</button>
+
+<script>
+  $(document).ready(function() {
+    // Show button when user scrolls down 200px
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 200) {
+        $('#scrollTopBtn').fadeIn();
+      } else {
+        $('#scrollTopBtn').fadeOut();
+      }
+    });
+
+    // Scroll smoothly to top on button click
+    $('#scrollTopBtn').click(function() {
+      $('html, body').animate({ scrollTop: 0 }, 600);
+      return false;
+    });
+  });
+</script>
+
+</body>
+</html>

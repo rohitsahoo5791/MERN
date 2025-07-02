@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Background Color by Input Content</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #myInput {
+      padding: 10px;
+      font-size: 18px;
+      width: 300px;
+      border: 2px solid #ccc;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<input type="text" id="myInput" placeholder="Type here..." />
+
+<script>
+ $(document).ready(function() {
+  // Focus handler: add red border on focus
+  $('#myInput').focus(function() {
+    $(this).css('background-color', 'red');
+  });
+
+  // Blur handler: remove border on focus out
+  $('#myInput').blur(function() {
+    $(this).css('border', '');
+  });
+
+  // Input handler: change background color based on value
+  $('#myInput').on('input', function() {
+    const val = $(this).val();
+
+    if (val.includes('@')) {
+      $(this).css('background-color', '#FBFF00'); // Yellow
+    } if (val.includes('.com') && val.includes('@')) {
+      $(this).css('background-color', '#15FF00'); // Green
+    } else {
+      $(this).css('background-color', '#FF9100'); // Orange
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

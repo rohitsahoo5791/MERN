@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Toggle Paragraph Visibility</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #myParagraph {
+      display: none; 
+    }
+  </style>
+</head>
+<body>
+
+<button id="toggleBtn">Show/Hide Paragraph</button>
+
+<p id="myParagraph">This is the paragraph to show or hide.</p>
+
+<script>
+  $(document).ready(function(){
+    $('#toggleBtn').click(function(){
+      $('#myParagraph').toggle();
+    });
+  });
+</script>
+
+</body>
+</html>
