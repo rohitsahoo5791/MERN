@@ -1,10 +1,13 @@
-## Screenshots
+<h2>Screenshots</h2>
 
-**NavBar**  
-![NavBar](01-07-2025/Screenshot%202025-07-02%20062728.png)
+<p><strong>NavBar</strong><br>
+<img src="01-07-2025/Screenshot%202025-07-02%20062728.png" alt="NavBar" width="600">
+</p>
 
-**Cards**  
-![Cards](01-07-2025/Screenshot%202025-07-02%20062758.png)
+<p><strong>Cards</strong><br>
+<img src="01-07-2025/Screenshot%202025-07-02%20062758.png" alt="Cards" width="600">
+</p>
 
-**Form**  
-![Form](01-07-2025/Screenshot%202025-07-02%20062758.png)
+<p><strong>Form</strong><br>
+<img src="01-07-2025/Screenshot%202025-07-02%20062758.png" alt="Form" width="600">
+</p>
